@@ -1,0 +1,54 @@
+<%- include('../partials/header.ejs') %>
+
+<!-- Begin page content -->
+<main role="main">
+
+    <section class="jumbotron text-center">
+      <div class="container m-5">
+        <h1 class="jumbotron-heading"> </h1>
+        <p class="lead text-muted"> Test de recrutement en ligne pour la formation Cloud AWS, Postulant : MAYANDZA NGOUALA Jules Felver, Structure d'accueil : SIMPLON.</p>
+
+        <p class="lead text-muted"> SPM (Simplon Participants Manager) est un carnet électronique des participants aux activités de Simplon CI </p>
+        <p>
+          <a href="/simplon/api/v1/participants" class="btn btn-primary my-2center">Afficher tous les participant</a>
+        </p>
+      </div>
+      </section>
+
+
+      <div class="alert alert-primary text-center" role="alert">
+        Remplissez ce formulaire pour vous Enregistrer
+      </div>
+      <section>
+      <div class="container">
+        <form action="/simplon/api/v1/participants/register" method="post" class="mt-5">
+            <div class="form-group">
+              <label for="exampleInputPassword1">Nom (s)</label>
+              <input type="text" name="name" class="form-control" id="exampleInputPassword1" placeholder=" ">
+            </div>
+      
+            <div class="form-group">
+              <label for="exampleInputPassword1">Prénom (s) </label>
+              <input type="text" name="firstName" class="form-control" id="exampleInputPassword1" placeholder=" ">
+            </div>
+      
+            <div class="form-group">
+              <label for="exampleInputEmail1">Adresse Email </label>
+              <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=" ">
+            </div>
+      
+            <div class="form-group">
+              <label for="exampleInputPassword1">Téléphone </label>
+              <input type="number" name="phone" class="form-control" id="exampleInputPassword1" placeholder=" ">
+            </div>
+      
+            <button type="submit" class="btn btn-primary mt-3 mb-5">Enregister</button>
+          </form>    
+        
+      </div>
+    </section>
+
+  </main>
+
+
+<%- include('../partials/footer.ejs') %>

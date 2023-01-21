@@ -1,0 +1,52 @@
+<%- include('../partials/header.ejs') %> 
+
+<!-- Begin page content -->
+<main role="main">
+
+    <section class="jumbotron text-center">
+      <div class="container m-5">
+        <h1 class="jumbotron-heading"> </h1>
+        <p class="lead text-muted"> Test de recrutement en ligne pour la formation Cloud AWS, Postulant : MAYANDZA NGOUALA Jules Felver, Structure d'accueil : SIMPLON.</p>
+
+        <p class="lead text-muted"> SPM (Simplon Participants Manager) est un carnet électronique des participants aux activités de Simplon CI </p>
+        <p>
+          <a href="/simplon/api/v1/participants/register" class="btn btn-primary my-2">Enregistrer un participant</a>
+        </p>
+      </div>
+
+      <div>
+        <table class="table table-bordered m-2">
+            <thead class="thead-dark">
+              <tr class="table-primary">
+                <th scope="col"></th>
+                <th scope="col">Nom (s)</th>
+                <th scope="col">Prénom (s)</th>
+                <th scope="col">N° de téléphone</th>
+                <th scope="col">Adresses Email</th>
+              </tr>
+            </thead>
+            <% participantsList.forEach((participants, index) => {%>
+                <% if (!participants) { %>
+                    <p> Aucun participant n'est inscrit </p>
+                <% } %>  
+
+            
+                <tbody>
+                    <tr>
+                        <th scope="row"> <%=  (index + 1) %> </th>
+                        <td> <%= participants.name  %> </td>
+                        <td> <%= participants.firstName %>  </td>
+                        <td> <%= participants.phone %> </td>
+                        <td> <%= participants.email %> </td>
+                    </tr>
+                    </tbody>
+             
+
+            <% }); %>
+          </table>
+         </div>
+    </section>
+
+  </main>
+
+<%- include('../partials/footer.ejs') %> 
