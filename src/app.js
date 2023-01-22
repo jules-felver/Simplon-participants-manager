@@ -8,7 +8,7 @@ import path, {dirname} from 'path'
 
 
 dotenv.config()
-const port = process.env.port
+const port = process.env.port || 3000
 const api = process.env.API
 
 
